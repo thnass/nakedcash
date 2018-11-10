@@ -1,0 +1,26 @@
+[Unit]
+Description=Nakedcash's distributed currency daemon
+After=network.target
+
+[Service]
+User=Nakedcash
+Group=Nakedcash
+
+Type=forking
+PIDFile=/var/lib/nakedcashd/nakedcashd.pid
+
+ExecStart=/usr/bin/nakedcashd -daemon -pid=/var/lib/nakedcashd/nakedcashd.pid \
+          -conf=/etc/Nakedcash/nakedcash.conf -datadir=/var/lib/nakedcashd
+
+ExecStop=-/usr/bin/nakedcash-cli -conf=/etc/Nakedcash/nakedcash.conf \
+         -datadir=/var/lib/nakedcashd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

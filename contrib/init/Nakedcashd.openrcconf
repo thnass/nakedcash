@@ -1,0 +1,26 @@
+# /etc/conf.d/nakedcashd: config file for /etc/init.d/nakedcashd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/Nakedcash/nakedcash.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/nakedcashd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/nakedcashd.pid"
+
+# Where to write nakedcashd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/nakedcashd"
+
+# User and group to own nakedcashd process
+#BITCOIND_USER="Nakedcash"
+#BITCOIND_GROUP="Nakedcash"
+
+# Path to nakedcashd executable
+#BITCOIND_BIN="/usr/bin/nakedcashd"
+
+# Nice value to run nakedcashd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
