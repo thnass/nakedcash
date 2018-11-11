@@ -457,7 +457,7 @@ nakedcashd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 
 # nakedcash-cli binary #
-Nakedcash_cli_LDADD = \
+nakedcash_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBBITCOIN_UTIL) \
   $(BOOST_LIBS) \
@@ -465,14 +465,14 @@ Nakedcash_cli_LDADD = \
   $(CRYPTO_LIBS) \
   $(EVENT_LIBS)
 
-Nakedcash_cli_SOURCES = \
+nakedcash_cli_SOURCES = \
   nakedcash-cli.cpp
 
-Nakedcash_cli_CPPFLAGS = $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+nakedcash_cli_CPPFLAGS = $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 #
 
 # nakedcash-tx binary #
-Nakedcash_tx_LDADD = \
+nakedcash_tx_LDADD = \
   $(LIBBITCOIN_UNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_ZEROCOIN) \
@@ -482,15 +482,15 @@ Nakedcash_tx_LDADD = \
   $(BOOST_LIBS) \
   $(CRYPTO_LIBS)
 
-Nakedcash_tx_SOURCES = nakedcash-tx.cpp
-Nakedcash_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
+nakedcash_tx_SOURCES = nakedcash-tx.cpp
+nakedcash_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
-Nakedcash_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+nakedcash_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-Nakedcash_cli_SOURCES += nakedcash-cli-res.rc
+nakedcash_cli_SOURCES += nakedcash-cli-res.rc
 endif
-Nakedcash_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+nakedcash_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if BUILD_BITCOIN_LIBS
 include_HEADERS = script/bitcoinconsensus.h

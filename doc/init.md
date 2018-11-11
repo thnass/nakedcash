@@ -35,7 +35,7 @@ generate one from the shell yourself like this:
 
 bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'
 
-Once you have a password in hand, set rpcpassword= in /etc/Nakedcash/nakedcash.conf
+Once you have a password in hand, set rpcpassword= in /etc/nakedcash/nakedcash.conf
 
 For an example configuration file that describes the configuration settings,
 see contrib/debian/examples/nakedcash.conf.
@@ -46,7 +46,7 @@ see contrib/debian/examples/nakedcash.conf.
 All three configurations assume several paths that might need to be adjusted.
 
 Binary:              /usr/bin/nakedcashd
-Configuration file:  /etc/Nakedcash/nakedcash.conf
+Configuration file:  /etc/nakedcash/nakedcash.conf
 Data directory:      /var/lib/nakedcashd
 PID file:            /var/run/nakedcashd/nakedcashd.pid (OpenRC and Upstart)
                      /var/lib/nakedcashd/nakedcashd.pid (systemd)

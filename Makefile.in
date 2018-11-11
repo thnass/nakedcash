@@ -124,7 +124,7 @@ DIST_COMMON = $(srcdir)/Makefile.am $(top_srcdir)/configure \
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
-CONFIG_HEADER = $(top_builddir)/src/config/Nakedcash-config.h
+CONFIG_HEADER = $(top_builddir)/src/config/nakedcash-config.h
 CONFIG_CLEAN_FILES = share/setup.nsi share/qt/Info.plist \
 	src/test/buildenv.py qa/pull-tester/run-bitcoind-for-test.sh \
 	qa/pull-tester/tests-config.sh contrib/devtools/split-debug.sh
@@ -198,7 +198,7 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/qa/pull-tester/tests-config.sh.in \
 	$(top_srcdir)/share/qt/Info.plist.in \
 	$(top_srcdir)/share/setup.nsi.in \
-	$(top_srcdir)/src/config/Nakedcash-config.h.in \
+	$(top_srcdir)/src/config/nakedcash-config.h.in \
 	$(top_srcdir)/src/test/buildenv.py.in COPYING INSTALL \
 	build-aux/compile build-aux/config.guess build-aux/config.sub \
 	build-aux/install-sh build-aux/ltmain.sh build-aux/missing
@@ -565,20 +565,20 @@ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
 	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
 $(am__aclocal_m4_deps):
 
-src/config/Nakedcash-config.h: src/config/stamp-h1
+src/config/nakedcash-config.h: src/config/stamp-h1
 	@test -f $@ || rm -f src/config/stamp-h1
 	@test -f $@ || $(MAKE) $(AM_MAKEFLAGS) src/config/stamp-h1
 
-src/config/stamp-h1: $(top_srcdir)/src/config/Nakedcash-config.h.in $(top_builddir)/config.status
+src/config/stamp-h1: $(top_srcdir)/src/config/nakedcash-config.h.in $(top_builddir)/config.status
 	@rm -f src/config/stamp-h1
-	cd $(top_builddir) && $(SHELL) ./config.status src/config/Nakedcash-config.h
-$(top_srcdir)/src/config/Nakedcash-config.h.in: @MAINTAINER_MODE_TRUE@ $(am__configure_deps) 
+	cd $(top_builddir) && $(SHELL) ./config.status src/config/nakedcash-config.h
+$(top_srcdir)/src/config/nakedcash-config.h.in: @MAINTAINER_MODE_TRUE@ $(am__configure_deps) 
 	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
 	rm -f src/config/stamp-h1
 	touch $@
 
 distclean-hdr:
-	-rm -f src/config/Nakedcash-config.h src/config/stamp-h1
+	-rm -f src/config/nakedcash-config.h src/config/stamp-h1
 share/setup.nsi: $(top_builddir)/config.status $(top_srcdir)/share/setup.nsi.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 share/qt/Info.plist: $(top_builddir)/config.status $(top_srcdir)/share/qt/Info.plist.in

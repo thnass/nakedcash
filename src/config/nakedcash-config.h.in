@@ -1,4 +1,4 @@
-/* src/config/Nakedcash-config.h.in.  Generated from configure.ac by autoheader.  */
+/* src/config/nakedcash-config.h.in.  Generated from configure.ac by autoheader.  */
 
 #ifndef NAKD_CONFIG_H
 

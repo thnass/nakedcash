@@ -7,7 +7,7 @@
 #define BITCOIN_CLIENTVERSION_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/Nakedcash-config.h"
+#include "config/nakedcash-config.h"
 #else
 
 /**

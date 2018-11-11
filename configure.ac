@@ -8,7 +8,7 @@ define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2018)
 AC_INIT([Nakedcash Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[www.cash.nakedspace.net],[Nakedcash])
 AC_CONFIG_SRCDIR([src/main.cpp])
-AC_CONFIG_HEADERS([src/config/Nakedcash-config.h])
+AC_CONFIG_HEADERS([src/config/nakedcash-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
@@ -264,7 +264,7 @@ case $host in
      esac
      AC_SUBST(WINDOWS_BITS)
 
-     dnl libtool insists upon adding -Nakedcashtdlib and a list of objects/libs to link against.
+     dnl libtool insists upon adding -nakedcashtdlib and a list of objects/libs to link against.
      dnl That breaks our ability to build dll's with static libgcc/libstdc++/libssp. Override
      dnl its command here, with the predeps/postdeps removed, and -static inserted. Postdeps are
      dnl also overridden to prevent their insertion later.
@@ -396,7 +396,7 @@ AC_C_BIGENDIAN([AC_MSG_ERROR("Big Endian not supported")])
 dnl Check for pthread compile/link requirements
 AX_PTHREAD
 
-# The following macro will add the necessary defines to Nakedcash-config.h, but
+# The following macro will add the necessary defines to nakedcash-config.h, but
 # they also need to be passed down to any subprojects. Pull the results out of
 # the cache and add them to CPPFLAGS.
 AC_SYS_LARGEFILE

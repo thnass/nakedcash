@@ -3,16 +3,16 @@ Description=Nakedcash's distributed currency daemon
 After=network.target
 
 [Service]
-User=Nakedcash
-Group=Nakedcash
+User=nakedcash
+Group=nakedcash
 
 Type=forking
 PIDFile=/var/lib/nakedcashd/nakedcashd.pid
 
 ExecStart=/usr/bin/nakedcashd -daemon -pid=/var/lib/nakedcashd/nakedcashd.pid \
-          -conf=/etc/Nakedcash/nakedcash.conf -datadir=/var/lib/nakedcashd
+          -conf=/etc/nakedcash/nakedcash.conf -datadir=/var/lib/nakedcashd
 
-ExecStop=-/usr/bin/nakedcash-cli -conf=/etc/Nakedcash/nakedcash.conf \
+ExecStop=-/usr/bin/nakedcash-cli -conf=/etc/nakedcash/nakedcash.conf \
          -datadir=/var/lib/nakedcashd stop
 
 Restart=always

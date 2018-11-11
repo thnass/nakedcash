@@ -1,6 +1,6 @@
 qt/test/qt_test_test_Nakedcash_qt-test_main.o: qt/test/test_main.cpp \
- /usr/include/stdc-predef.h config/Nakedcash-config.h util.h \
- config/Nakedcash-config.h compat.h /usr/include/arpa/inet.h \
+ /usr/include/stdc-predef.h config/nakedcash-config.h util.h \
+ config/nakedcash-config.h compat.h /usr/include/arpa/inet.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
@@ -1352,11 +1352,11 @@ qt/test/qt_test_test_Nakedcash_qt-test_main.o: qt/test/test_main.cpp \
 
 /usr/include/stdc-predef.h:
 
-config/Nakedcash-config.h:
+config/nakedcash-config.h:
 
 util.h:
 
-config/Nakedcash-config.h:
+config/nakedcash-config.h:
 
 compat.h:
 
