@@ -293,6 +293,7 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/simd.c \
   crypto/echo.c \
   crypto/whirlpool.c \
+  crypto/md_helper.c \
   crypto/haval.c \
   crypto/hamsi.c \
   crypto/fugue.c \
