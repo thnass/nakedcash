@@ -44,8 +44,8 @@ Instructions: Homebrew
 
 1. Clone the github tree to get the source code and go into the directory.
 
-        git clone https://github.com/thnass/Nakedcash.git
-        cd Nakedcash
+        git clone https://github.com/thnass/nakedcash.git
+        cd nakedcash
 
 2.  Build nakedcashd:
 
@@ -69,7 +69,7 @@ Download Qt Creator from http://www.qt.io/download/. Download the "community edi
 1. Make sure you installed everything through homebrew mentioned above
 2. Do a proper ./configure --with-gui=qt5 --enable-debug
 3. In Qt Creator do "New Project" -> Import Project -> Import Existing Project
-4. Enter "Nakedcash-qt" as project name, enter src/qt as location
+4. Enter "nakedcash-qt" as project name, enter src/qt as location
 5. Leave the file selection as it is
 6. Confirm the "summary page"
 7. In the "Projects" tab select "Manage Kits..."
@@ -81,9 +81,9 @@ Creating a release build
 ------------------------
 You can ignore this section if you are building `nakedcashd` for your own use.
 
-nakedcashd/nakedcash-cli binaries are not included in the Nakedcash-Qt.app bundle.
+nakedcashd/nakedcash-cli binaries are not included in the nakedcash-Qt.app bundle.
 
-If you are building `nakedcashd` or `Nakedcash-qt` for others, your build machine should be set up
+If you are building `nakedcashd` or `nakedcash-qt` for others, your build machine should be set up
 as follows for maximum compatibility:
 
 All dependencies should be compiled with these flags:
@@ -92,7 +92,7 @@ All dependencies should be compiled with these flags:
  -arch x86_64
  -isysroot $(xcode-select --print-path)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk
 
-Once dependencies are compiled, see release-process.md for how the Nakedcash-Qt.app
+Once dependencies are compiled, see release-process.md for how the nakedcash-Qt.app
 bundle is packaged and signed to create the .dmg disk image that is distributed.
 
 Running
@@ -104,18 +104,18 @@ directory. We have to first create the RPC configuration file, though.
 Run `./nakedcashd` to get the filename where it should be put, or just try these
 commands:
 
-    echo -e "rpcuser=Nakedcashrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Nakedcash/nakedcash.conf"
-    chmod 600 "/Users/${USER}/Library/Application Support/Nakedcash/nakedcash.conf"
+    echo -e "rpcuser=nakedcashrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/nakedcash/nakedcash.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/nakedcash/nakedcash.conf"
 
 The next time you run it, it will start downloading the blockchain, but it won't
 output anything while it's doing this. This process may take several hours;
 you can monitor its process by looking at the debug.log file, like this:
 
-    tail -f $HOME/Library/Application\ Support/Nakedcash/debug.log
+    tail -f $HOME/Library/Application\ Support/nakedcash/debug.log
 
 Other commands:
 -------
 
-    ./nakedcashd -daemon # to start the Nakedcash daemon.
+    ./nakedcashd -daemon # to start the nakedcash daemon.
     ./nakedcash-cli --help  # for a list of command-line options.
     ./nakedcash-cli help    # When the daemon is running, to get a list of RPC commands

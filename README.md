@@ -48,11 +48,11 @@ More information at [coin.nakedspace.net](http://coin.nakedspace.net) Visit our 
 
 ***
 
-It is recommended [use the shell script](https://cash.nakedspace.net/masternode.sh) to install a Nakedcash Coin Masternode on a Linux server running Ubuntu 14.04 or 16.04
+It is recommended [use the shell script](https://cash.nakedspace.net/masternode.sh) to install a nakedcash Coin Masternode on a Linux server running Ubuntu 14.04 or 16.04
 
 ***
 
-Quick installation of the Nakedcash daemon under linux. See detailed instructions there [build-unix.md](build-unix.md)
+Quick installation of the nakedcash daemon under linux. See detailed instructions there [build-unix.md](build-unix.md)
 
 Installation of libraries (using root user):
 

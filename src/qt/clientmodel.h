@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2018 Nakedcash CORE developers 'https://cash.nakedspace.net'
+// Copyright (c) 2018 nakedcash CORE developers 'https://cash.nakedspace.net'
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -36,7 +36,7 @@ enum NumConnections {
     CONNECTIONS_ALL = (CONNECTIONS_IN | CONNECTIONS_OUT),
 };
 
-/** Model for Nakedcash network client. */
+/** Model for nakedcash network client. */
 class ClientModel : public QObject
 {
     Q_OBJECT

@@ -1,21 +1,21 @@
 
 Debian
 ====================
-This directory contains files used to package nakedcashd/Nakedcash-qt
-for Debian-based Linux systems. If you compile nakedcashd/Nakedcash-qt yourself, there are some useful files here.
+This directory contains files used to package nakedcashd/nakedcash-qt
+for Debian-based Linux systems. If you compile nakedcashd/nakedcash-qt yourself, there are some useful files here.
 
-## Nakedcash: URI support ##
+## nakedcash: URI support ##
 
 
-Nakedcash-qt.desktop  (Gnome / Open Desktop)
+nakedcash-qt.desktop  (Gnome / Open Desktop)
 To install:
 
-	sudo desktop-file-install Nakedcash-qt.desktop
+	sudo desktop-file-install nakedcash-qt.desktop
 	sudo update-desktop-database
 
 If you build yourself, you will either need to modify the paths in
-the .desktop file or copy or symlink your Nakedcashqt binary to `/usr/bin`
-and the `../../share/pixmaps/Nakedcash128.png` to `/usr/share/pixmaps`
+the .desktop file or copy or symlink your nakedcashqt binary to `/usr/bin`
+and the `../../share/pixmaps/nakedcash128.png` to `/usr/share/pixmaps`
 
-Nakedcash-qt.protocol (KDE)
+nakedcash-qt.protocol (KDE)
 

@@ -1,4 +1,4 @@
-Name "Nakedcash Core (-bit)"
+Name "nakedcash Core (-bit)"
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
@@ -6,7 +6,7 @@ SetCompressor /SOLID lzma
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
 !define VERSION 1.0.5
-!define COMPANY "Nakedcash Core project"
+!define COMPANY "nakedcash Core project"
 !define URL https://www.cash.nakedspace.net
 
 # MUI Symbol Definitions
@@ -19,8 +19,8 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER "Nakedcash Core"
-!define MUI_FINISHPAGE_RUN $INSTDIR\Nakedcash-qt
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER "nakedcash Core"
+!define MUI_FINISHPAGE_RUN $INSTDIR\nakedcash-qt
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
 !define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/davincci199412/Desktop/Halilonuk/nakedcash_NEW/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
@@ -48,18 +48,18 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /home/davincci199412/Desktop/Halilonuk/nakedcash_NEW/Nakedcash-${VERSION}-win-setup.exe
+OutFile /home/davincci199412/Desktop/Halilonuk/nakedcash_NEW/nakedcash-${VERSION}-win-setup.exe
 !if "" == "64"
-InstallDir $PROGRAMFILES64\Nakedcash
+InstallDir $PROGRAMFILES64\nakedcash
 !else
-InstallDir $PROGRAMFILES\Nakedcash
+InstallDir $PROGRAMFILES\nakedcash
 !endif
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
 VIProductVersion ${VERSION}.1
-VIAddVersionKey ProductName "Nakedcash Core"
+VIAddVersionKey ProductName "nakedcash Core"
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -73,7 +73,7 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /home/davincci199412/Desktop/Halilonuk/nakedcash_NEW/release/Nakedcash-qt
+    File /home/davincci199412/Desktop/Halilonuk/nakedcash_NEW/release/nakedcash-qt
     File /oname=COPYING.txt /home/davincci199412/Desktop/Halilonuk/nakedcash_NEW/COPYING
     File /oname=readme.txt /home/davincci199412/Desktop/Halilonuk/nakedcash_NEW/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
@@ -91,8 +91,8 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\Nakedcash-qt
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Nakedcash Core (testnet, -bit).lnk" "$INSTDIR\Nakedcash-qt" "-testnet" "$INSTDIR\Nakedcash-qt" 1
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\nakedcash-qt
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\nakedcash Core (testnet, -bit).lnk" "$INSTDIR\nakedcash-qt" "-testnet" "$INSTDIR\nakedcash-qt" 1
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
@@ -103,10 +103,10 @@ Section -post SEC0001
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" UninstallString $INSTDIR\uninstall.exe
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
-    WriteRegStr HKCR "Nakedcash" "URL Protocol" ""
-    WriteRegStr HKCR "Nakedcash" "" "URL:Nakedcash"
-    WriteRegStr HKCR "Nakedcash\DefaultIcon" "" $INSTDIR\Nakedcash-qt
-    WriteRegStr HKCR "Nakedcash\shell\open\command" "" '"$INSTDIR\Nakedcash-qt" "%1"'
+    WriteRegStr HKCR "nakedcash" "URL Protocol" ""
+    WriteRegStr HKCR "nakedcash" "" "URL:nakedcash"
+    WriteRegStr HKCR "nakedcash\DefaultIcon" "" $INSTDIR\nakedcash-qt
+    WriteRegStr HKCR "nakedcash\shell\open\command" "" '"$INSTDIR\nakedcash-qt" "%1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -124,7 +124,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\Nakedcash-qt
+    Delete /REBOOTOK $INSTDIR\nakedcash-qt
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -136,8 +136,8 @@ Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Nakedcash Core (testnet, -bit).lnk"
-    Delete /REBOOTOK "$SMSTARTUP\Nakedcash.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\nakedcash Core (testnet, -bit).lnk"
+    Delete /REBOOTOK "$SMSTARTUP\nakedcash.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log
@@ -145,7 +145,7 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "Nakedcash"
+    DeleteRegKey HKCR "nakedcash"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0

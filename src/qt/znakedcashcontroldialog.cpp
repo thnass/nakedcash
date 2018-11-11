@@ -1,22 +1,22 @@
 // Copyright (c) 2017 The PIVX developers
-// Copyright (c) 2017-2018 The Nakedcash developers
+// Copyright (c) 2017-2018 The nakedcash developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "zNakedcashcontroldialog.h"
-#include "ui_zNakedcashcontroldialog.h"
+#include "znakedcashcontroldialog.h"
+#include "ui_znakedcashcontroldialog.h"
 
 #include "main.h"
 #include "walletmodel.h"
 
 using namespace std;
 
-std::list<std::string> ZNakedcashControlDialog::listSelectedMints;
-std::list<CZerocoinMint> ZNakedcashControlDialog::listMints;
+std::list<std::string> ZnakedcashControlDialog::listSelectedMints;
+std::list<CZerocoinMint> ZnakedcashControlDialog::listMints;
 
-ZNakedcashControlDialog::ZNakedcashControlDialog(QWidget *parent) :
+ZnakedcashControlDialog::ZnakedcashControlDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::ZNakedcashControlDialog),
+    ui(new Ui::ZnakedcashControlDialog),
     model(0)
 {
     ui->setupUi(this);
@@ -30,19 +30,19 @@ ZNakedcashControlDialog::ZNakedcashControlDialog(QWidget *parent) :
     connect(ui->pushButtonAll, SIGNAL(clicked()), this, SLOT(ButtonAllClicked()));
 }
 
-ZNakedcashControlDialog::~ZNakedcashControlDialog()
+ZnakedcashControlDialog::~ZnakedcashControlDialog()
 {
     delete ui;
 }
 
-void ZNakedcashControlDialog::setModel(WalletModel *model)
+void ZnakedcashControlDialog::setModel(WalletModel *model)
 {
     this->model = model;
     updateList();
 }
 
 //Update the tree widget
-void ZNakedcashControlDialog::updateList()
+void ZnakedcashControlDialog::updateList()
 {
     // need to prevent the slot from being called each time something is changed
     ui->treeWidget->blockSignals(true);
@@ -134,7 +134,7 @@ void ZNakedcashControlDialog::updateList()
 }
 
 // Update the list when a checkbox is clicked
-void ZNakedcashControlDialog::updateSelection(QTreeWidgetItem* item, int column)
+void ZnakedcashControlDialog::updateSelection(QTreeWidgetItem* item, int column)
 {
     // only want updates from non top level items that are available to spend
     if (item->parent() && column == COLUMN_CHECKBOX && !item->isDisabled()){
@@ -157,7 +157,7 @@ void ZNakedcashControlDialog::updateSelection(QTreeWidgetItem* item, int column)
 }
 
 // Update the Quantity and Amount display
-void ZNakedcashControlDialog::updateLabels()
+void ZnakedcashControlDialog::updateLabels()
 {
     int64_t nAmount = 0;
     for (const CZerocoinMint mint : listMints) {
@@ -167,14 +167,14 @@ void ZNakedcashControlDialog::updateLabels()
     }
 
     //update this dialog's labels
-    ui->labelZNakedcash_int->setText(QString::number(nAmount));
+    ui->labelZnakedcash_int->setText(QString::number(nAmount));
     ui->labelQuantity_int->setText(QString::number(listSelectedMints.size()));
 
     //update PrivacyDialog labels
-    privacyDialog->setZNakedcashControlLabels(nAmount, listSelectedMints.size());
+    privacyDialog->setZnakedcashControlLabels(nAmount, listSelectedMints.size());
 }
 
-std::vector<CZerocoinMint> ZNakedcashControlDialog::GetSelectedMints()
+std::vector<CZerocoinMint> ZnakedcashControlDialog::GetSelectedMints()
 {
     std::vector<CZerocoinMint> listReturn;
     for (const CZerocoinMint mint : listMints) {
@@ -187,7 +187,7 @@ std::vector<CZerocoinMint> ZNakedcashControlDialog::GetSelectedMints()
 }
 
 // select or deselect all of the mints
-void ZNakedcashControlDialog::ButtonAllClicked()
+void ZnakedcashControlDialog::ButtonAllClicked()
 {
     ui->treeWidget->blockSignals(true);
     Qt::CheckState state = Qt::Checked;

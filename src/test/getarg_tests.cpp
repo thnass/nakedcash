@@ -50,7 +50,7 @@ BOOST_AUTO_TEST_CASE(boolarg)
     BOOST_CHECK(GetBoolArg("-foo", false));
     BOOST_CHECK(GetBoolArg("-foo", true));
 
-    // New 0.6 feature: auto-map -Nakedcashomething to !-something:
+    // New 0.6 feature: auto-map -nakedcashomething to !-something:
     ResetArgs("-nofoo");
     BOOST_CHECK(!GetBoolArg("-foo", false));
     BOOST_CHECK(!GetBoolArg("-foo", true));

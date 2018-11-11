@@ -105,7 +105,7 @@ std::string to_internal(const std::string&);
 
 using namespace std;
 
-// Nakedcash only features
+// nakedcash only features
 // Masternode
 bool fMasterNode = false;
 string strMasterNodePrivKey = "";
@@ -120,7 +120,7 @@ int nZeromintPercentage = 10;
 int nPreferredDenom = 0;
 const int64_t AUTOMINT_DELAY = (60 * 5); // Wait at least 5 minutes until Automint starts
 
-int nAnonymizeNakedcashAmount = 1000;
+int nAnonymizenakedcashAmount = 1000;
 int nLiquidityProvider = 0;
 /** Spork enforcement enabled time */
 int64_t enforceMasternodePaymentsTime = 4085657524;
@@ -237,8 +237,8 @@ bool LogAcceptCategory(const char* category)
             const vector<string>& categories = mapMultiArgs["-debug"];
             ptrCategory.reset(new set<string>(categories.begin(), categories.end()));
             // thread_specific_ptr automatically deletes the set when the thread ends.
-            // "Nakedcash" is a composite category enabling all Nakedcash-related debug output
-            if (ptrCategory->count(string("Nakedcash"))) {
+            // "nakedcash" is a composite category enabling all nakedcash-related debug output
+            if (ptrCategory->count(string("nakedcash"))) {
                 ptrCategory->insert(string("obfuscation"));
                 ptrCategory->insert(string("swiftx"));
                 ptrCategory->insert(string("masternode"));
@@ -403,7 +403,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "Nakedcash";
+    const char* pszModule = "nakedcash";
 #endif
     if (pex)
         return strprintf(
@@ -424,13 +424,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-// Windows < Vista: C:\Documents and Settings\Username\Application Data\Nakedcash
-// Windows >= Vista: C:\Users\Username\AppData\Roaming\Nakedcash
-// Mac: ~/Library/Application Support/Nakedcash
-// Unix: ~/.Nakedcash
+// Windows < Vista: C:\Documents and Settings\Username\Application Data\nakedcash
+// Windows >= Vista: C:\Users\Username\AppData\Roaming\nakedcash
+// Mac: ~/Library/Application Support/nakedcash
+// Unix: ~/.nakedcash
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Nakedcash";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "nakedcash";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -442,10 +442,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "Nakedcash";
+    return pathRet / "nakedcash";
 #else
     // Unix
-    return pathRet / ".Nakedcash";
+    return pathRet / ".nakedcash";
 #endif
 #endif
 }

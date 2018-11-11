@@ -1,5 +1,5 @@
 // Copyright (c) 2017 The PIVX Core developers
-// Copyright (c) 2018 Nakedcash CORE developers 'https://cash.nakedspace.net'
+// Copyright (c) 2018 nakedcash CORE developers 'https://cash.nakedspace.net'
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 

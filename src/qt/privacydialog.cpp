@@ -14,7 +14,7 @@
 #include "sendcoinsentry.h"
 #include "walletmodel.h"
 #include "coincontrol.h"
-#include "zNakedcashcontroldialog.h"
+#include "znakedcashcontroldialog.h"
 #include "spork.h"
 
 #include <QClipboard>
@@ -66,7 +66,7 @@ PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent),
     ui->labelzDenom7Text->setText("Denom. with value <b>1000</b>:");
     ui->labelzDenom8Text->setText("Denom. with value <b>5000</b>:");
 
-    // Nakedcash settings
+    // nakedcash settings
     QSettings settings;
     if (!settings.contains("nSecurityLevel")){
         nSecurityLevel = 42;
@@ -281,16 +281,16 @@ void PrivacyDialog::on_pushButtonSpendzNAKD_clicked()
     sendzNAKD();
 }
 
-void PrivacyDialog::on_pushButtonZNakedcashControl_clicked()
+void PrivacyDialog::on_pushButtonZnakedcashControl_clicked()
 {
-    ZNakedcashControlDialog* zNakedcashControl = new ZNakedcashControlDialog(this);
-    zNakedcashControl->setModel(walletModel);
-    zNakedcashControl->exec();
+    ZnakedcashControlDialog* znakedcashControl = new ZnakedcashControlDialog(this);
+    znakedcashControl->setModel(walletModel);
+    znakedcashControl->exec();
 }
 
-void PrivacyDialog::setZNakedcashControlLabels(int64_t nAmount, int nQuantity)
+void PrivacyDialog::setZnakedcashControlLabels(int64_t nAmount, int nQuantity)
 {
-    ui->labelzNakedcashSelected_int->setText(QString::number(nAmount));
+    ui->labelznakedcashSelected_int->setText(QString::number(nAmount));
     ui->labelQuantitySelected_int->setText(QString::number(nQuantity));
 }
 
@@ -310,7 +310,7 @@ void PrivacyDialog::sendzNAKD()
     }
     else{
         if (!address.IsValid()) {
-            QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid Nakedcash Address"), QMessageBox::Ok, QMessageBox::Ok);
+            QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid nakedcash Address"), QMessageBox::Ok, QMessageBox::Ok);
             ui->payTo->setFocus();
             return;
         }
@@ -396,10 +396,10 @@ void PrivacyDialog::sendzNAKD()
     ui->TEMintStatus->setPlainText(tr("Spending Zerocoin.\nComputationally expensive, might need several minutes depending on the selected Security Level and your hardware. \nPlease be patient..."));
     ui->TEMintStatus->repaint();
 
-    // use mints from zNakedcash selector if applicable
+    // use mints from znakedcash selector if applicable
     vector<CZerocoinMint> vMintsSelected;
-    if (!ZNakedcashControlDialog::listSelectedMints.empty()) {
-        vMintsSelected = ZNakedcashControlDialog::GetSelectedMints();
+    if (!ZnakedcashControlDialog::listSelectedMints.empty()) {
+        vMintsSelected = ZnakedcashControlDialog::GetSelectedMints();
     }
 
     // Spend zNAKD
@@ -434,15 +434,15 @@ void PrivacyDialog::sendzNAKD()
         return;
     }
 
-    // Clear zNakedcash selector in case it was used
-    ZNakedcashControlDialog::listSelectedMints.clear();
+    // Clear znakedcash selector in case it was used
+    ZnakedcashControlDialog::listSelectedMints.clear();
 
     // Some statistics for entertainment
     QString strStats = "";
     CAmount nValueIn = 0;
     int nCount = 0;
     for (CZerocoinSpend spend : receipt.GetSpends()) {
-        strStats += tr("zNakedcash Spend #: ") + QString::number(nCount) + ", ";
+        strStats += tr("znakedcash Spend #: ") + QString::number(nCount) + ", ";
         strStats += tr("denomination: ") + QString::number(spend.GetDenomination()) + ", ";
         strStats += tr("serial: ") + spend.GetSerial().ToString().c_str() + "\n";
         strStats += tr("Spend is 1 of : ") + QString::number(spend.GetMintCount()) + " mints in the accumulator\n";
@@ -451,13 +451,13 @@ void PrivacyDialog::sendzNAKD()
 
     CAmount nValueOut = 0;
     for (const CTxOut& txout: wtxNew.vout) {
-        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " Nakedcash, ";
+        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " nakedcash, ";
         nValueOut += txout.nValue;
 
         strStats += tr("address: ");
         CTxDestination dest;
         if(txout.scriptPubKey.IsZerocoinMint())
-            strStats += tr("zNakedcash Mint");
+            strStats += tr("znakedcash Mint");
         else if(ExtractDestination(txout.scriptPubKey, dest))
             strStats += tr(CBitcoinAddress(dest).ToString().c_str());
         strStats += "\n";

@@ -13,8 +13,8 @@
 #BITCOIND_DATADIR="/var/lib/nakedcashd"
 
 # User and group to own nakedcashd process
-#BITCOIND_USER="Nakedcash"
-#BITCOIND_GROUP="Nakedcash"
+#BITCOIND_USER="nakedcash"
+#BITCOIND_GROUP="nakedcash"
 
 # Path to nakedcashd executable
 #BITCOIND_BIN="/usr/bin/nakedcashd"

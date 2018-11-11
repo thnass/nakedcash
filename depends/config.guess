@@ -410,25 +410,25 @@ case "${UNAME_MACHINE}:${UNAME_SYSTEM}:${UNAME_RELEASE}:${UNAME_VERSION}" in
 		;;
 	esac
 	# Japanese Language versions have a version number like `4.1.3-JL'.
-	echo sparc-sun-suNakedcash`echo ${UNAME_RELEASE}|sed -e 's/-/_/'`
+	echo sparc-sun-sunakedcash`echo ${UNAME_RELEASE}|sed -e 's/-/_/'`
 	exit ;;
     sun3*:SunOS:*:*)
-	echo m68k-sun-suNakedcash${UNAME_RELEASE}
+	echo m68k-sun-sunakedcash${UNAME_RELEASE}
 	exit ;;
     sun*:*:4.2BSD:*)
 	UNAME_RELEASE=`(sed 1q /etc/motd | awk '{print substr($5,1,3)}') 2>/dev/null`
 	test "x${UNAME_RELEASE}" = x && UNAME_RELEASE=3
 	case "`/bin/arch`" in
 	    sun3)
-		echo m68k-sun-suNakedcash${UNAME_RELEASE}
+		echo m68k-sun-sunakedcash${UNAME_RELEASE}
 		;;
 	    sun4)
-		echo sparc-sun-suNakedcash${UNAME_RELEASE}
+		echo sparc-sun-sunakedcash${UNAME_RELEASE}
 		;;
 	esac
 	exit ;;
     aushp:SunOS:*:*)
-	echo sparc-auspex-suNakedcash${UNAME_RELEASE}
+	echo sparc-auspex-sunakedcash${UNAME_RELEASE}
 	exit ;;
     # The situation for MiNT is a little confusing.  The machine name
     # can be virtually everything (everything which is not

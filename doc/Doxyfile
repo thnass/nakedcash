@@ -28,7 +28,7 @@ DOXYFILE_ENCODING      = UTF-8
 # The PROJECT_NAME tag is a single word (or a sequence of words surrounded
 # by quotes) that should identify the project.
 
-PROJECT_NAME           = Nakedcash
+PROJECT_NAME           = nakedcash
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number.
 # This could be handy for archiving the generated documentation or
@@ -285,7 +285,7 @@ DISTRIBUTE_GROUP_DOC   = NO
 # the same type (for instance a group of public functions) to be put as a
 # subgroup of that type (e.g. under the Public Functions section). Set it to
 # NO to prevent subgrouping. Alternatively, this can be done per class using
-# the \Nakedcashubgrouping command.
+# the \nakedcashubgrouping command.
 
 SUBGROUPING            = YES
 

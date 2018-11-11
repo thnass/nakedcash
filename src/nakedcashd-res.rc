@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Nakedcash"
-            VALUE "FileDescription",    "nakedcashd (OSS daemon/client for Nakedcash)"
+            VALUE "CompanyName",        "nakedcash"
+            VALUE "FileDescription",    "nakedcashd (OSS daemon/client for nakedcash)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "nakedcashd"
             VALUE "LegalCopyright",     COPYRIGHT_STR

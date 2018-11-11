@@ -1,5 +1,5 @@
-qt/test/qt_test_test_Nakedcash_qt-moc_paymentservertests.o: \
- qt/test/moc_paymentservertests.cpp /usr/include/stdc-predef.h \
+qt/test/qt_test_test_nakedcash_qt-paymentservertests.o: \
+ qt/test/paymentservertests.cpp /usr/include/stdc-predef.h \
  qt/test/paymentservertests.h qt/test/../paymentserver.h \
  qt/test/../paymentrequestplus.h qt/test/../paymentrequest.pb.h \
  /usr/include/c++/5/string \
@@ -1338,7 +1338,31 @@ qt/test/qt_test_test_Nakedcash_qt-moc_paymentservertests.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qelapsedtimer.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qelapsedtimer.h \
+ qt/optionsmodel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QAbstractListModel \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
+ qt/test/paymentrequestdata.h random.h utilstrencodings.h \
+ /usr/include/openssl/x509.h /usr/include/openssl/buffer.h \
+ /usr/include/openssl/evp.h /usr/include/openssl/bio.h \
+ /usr/include/openssl/objects.h /usr/include/openssl/obj_mac.h \
+ /usr/include/openssl/asn1.h /usr/include/openssl/ec.h \
+ /usr/include/openssl/ecdsa.h /usr/include/openssl/ecdh.h \
+ /usr/include/openssl/rsa.h /usr/include/openssl/dsa.h \
+ /usr/include/openssl/dh.h /usr/include/openssl/x509_vfy.h \
+ /usr/include/openssl/lhash.h /usr/include/openssl/pkcs7.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QFileOpenEvent \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qregion.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QTemporaryFile \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtemporaryfile.h
 
 /usr/include/stdc-predef.h:
 
@@ -4485,3 +4509,71 @@ wallet.h:
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qelapsedtimer.h:
+
+qt/optionsmodel.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QAbstractListModel:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h:
+
+qt/test/paymentrequestdata.h:
+
+random.h:
+
+utilstrencodings.h:
+
+/usr/include/openssl/x509.h:
+
+/usr/include/openssl/buffer.h:
+
+/usr/include/openssl/evp.h:
+
+/usr/include/openssl/bio.h:
+
+/usr/include/openssl/objects.h:
+
+/usr/include/openssl/obj_mac.h:
+
+/usr/include/openssl/asn1.h:
+
+/usr/include/openssl/ec.h:
+
+/usr/include/openssl/ecdsa.h:
+
+/usr/include/openssl/ecdh.h:
+
+/usr/include/openssl/rsa.h:
+
+/usr/include/openssl/dsa.h:
+
+/usr/include/openssl/dh.h:
+
+/usr/include/openssl/x509_vfy.h:
+
+/usr/include/openssl/lhash.h:
+
+/usr/include/openssl/pkcs7.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/QFileOpenEvent:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qregion.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QTemporaryFile:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qtemporaryfile.h:

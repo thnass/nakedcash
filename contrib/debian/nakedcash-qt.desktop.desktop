@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=nakedcash
+Comment=nakedcash P2P Cryptocurrency
+Exec=nakedcash-qt %u
+Terminal=false
+Type=Application
+Icon=nakedcash128
+MimeType=x-scheme-handler/nakedcash;
+Categories=Office;Finance;
+Name[en_US]=nakedcash-qt.desktop

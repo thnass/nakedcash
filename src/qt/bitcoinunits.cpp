@@ -41,11 +41,11 @@ QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
     case NAKD:
-        return QString("Nakedcash");
+        return QString("nakedcash");
     case mNAKD:
-        return QString("mNakedcash");
+        return QString("mnakedcash");
     case uNAKD:
-        return QString::fromUtf8("uNakedcash");
+        return QString::fromUtf8("unakedcash");
     default:
         return QString("???");
     }

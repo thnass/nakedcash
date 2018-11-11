@@ -43,7 +43,7 @@ public:
 
     void setBitcoinGUI(BitcoinGUI* gui);
     /** Set the client model.
-        The client model represents the part of the core that communicates with the P2P network, and is wallet-agNakedcashtic.
+        The client model represents the part of the core that communicates with the P2P network, and is wallet-agnakedcashtic.
     */
     void setClientModel(ClientModel* clientModel);
     /** Set the wallet model.

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  nakedcashd The Nakedcash core server.
+#  nakedcashd The nakedcash core server.
 #
 #
 # chkconfig: 345 80 20

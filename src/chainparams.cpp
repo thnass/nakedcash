@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2018 Nakedcash CORE developers 'https://cash.nakedspace.net'
+// Copyright (c) 2018 nakedcash CORE developers 'https://cash.nakedspace.net'
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -113,7 +113,7 @@ public:
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
         nTargetTimespan = 3 * 60; //
-        nTargetSpacing = 3 * 60;  // Nakedcash: 3 min
+        nTargetSpacing = 3 * 60;  // nakedcash: 3 min
         nMaturity = 250;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 10000000 * COIN;
@@ -224,8 +224,8 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 3 * 60; // Nakedcash: 3 minute
-        nTargetSpacing = 3 * 60;  // Nakedcash: 3 minute
+        nTargetTimespan = 3 * 60; // nakedcash: 3 minute
+        nTargetSpacing = 3 * 60;  // nakedcash: 3 minute
         nLastPOWBlock = 200;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
@@ -303,8 +303,8 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // Nakedcash: 1 day
-        nTargetSpacing = 3 * 60;        // Nakedcash: 3 minutes
+        nTargetTimespan = 24 * 60 * 60; // nakedcash: 1 day
+        nTargetSpacing = 3 * 60;        // nakedcash: 3 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1536799820;
         genesis.nBits = 0x207fffff;

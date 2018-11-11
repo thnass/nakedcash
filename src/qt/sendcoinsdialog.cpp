@@ -59,7 +59,7 @@ SendCoinsDialog::SendCoinsDialog(QWidget* parent) : QDialog(parent),
     connect(ui->splitBlockCheckBox, SIGNAL(stateChanged(int)), this, SLOT(splitBlockChecked(int)));
     connect(ui->splitBlockLineEdit, SIGNAL(textChanged(const QString&)), this, SLOT(splitBlockLineEditChanged(const QString&)));
 
-    // Nakedcash specific
+    // nakedcash specific
     QSettings settings;
     if (!settings.contains("bUseObfuScation"))
         settings.setValue("bUseObfuScation", false);
@@ -283,8 +283,8 @@ void SendCoinsDialog::on_sendButton_clicked()
         QString amount = "<b>" + BitcoinUnits::formatHtmlWithUnit(model->getOptionsModel()->getDisplayUnit(), rcp.amount);
         amount.append("</b> ").append(strFunds);
 
-        // generate moNakedcashpace address string
-        QString address = "<span style='font-family: moNakedcashpace;'>" + rcp.address;
+        // generate monakedcashpace address string
+        QString address = "<span style='font-family: monakedcashpace;'>" + rcp.address;
         address.append("</span>");
 
         QString recipientElement;
@@ -884,7 +884,7 @@ void SendCoinsDialog::coinControlChangeEdited(const QString& text)
             ui->labelCoinControlChangeLabel->setText("");
         } else if (!addr.IsValid()) // Invalid address
         {
-            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid Nakedcash address"));
+            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid nakedcash address"));
         } else // Valid address
         {
             CPubKey pubkey;

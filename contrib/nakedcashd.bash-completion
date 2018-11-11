@@ -6,7 +6,7 @@
 have nakedcashd && {
 
 # call $nakedcashd for RPC
-_Nakedcash_rpc() {
+_nakedcash_rpc() {
     # determine already specified args necessary for RPC
     local rpcargs=()
     for i in ${COMP_LINE}; do
@@ -19,10 +19,10 @@ _Nakedcash_rpc() {
     $nakedcashd "${rpcargs[@]}" "$@"
 }
 
-# Add Nakedcash accounts to COMPREPLY
-_Nakedcash_accounts() {
+# Add nakedcash accounts to COMPREPLY
+_nakedcash_accounts() {
     local accounts
-    accounts=$(_Nakedcash_rpc listaccounts | awk '/".*"/ { a=$1; gsub(/"/, "", a); print a}')
+    accounts=$(_nakedcash_rpc listaccounts | awk '/".*"/ { a=$1; gsub(/"/, "", a); print a}')
     COMPREPLY=( "${COMPREPLY[@]}" $( compgen -W "$accounts" -- "$cur" ) )
 }
 
@@ -53,7 +53,7 @@ _nakedcashd() {
     if ((cword > 3)); then
         case ${words[cword-3]} in
             addmultisigaddress)
-                _Nakedcash_accounts
+                _nakedcash_accounts
                 return 0
                 ;;
             getbalance|gettxout|importaddress|importprivkey|listreceivedbyaccount|listreceivedbyaddress|listsinceblock)
@@ -74,7 +74,7 @@ _nakedcashd() {
                 return 0
                 ;;
             move|setaccount)
-                _Nakedcash_accounts
+                _nakedcash_accounts
                 return 0
                 ;;
         esac
@@ -90,7 +90,7 @@ _nakedcashd() {
             return 0
             ;;
         getaccountaddress|getaddressesbyaccount|getbalance|getnewaddress|getreceivedbyaccount|listtransactions|move|sendfrom|sendmany)
-            _Nakedcash_accounts
+            _nakedcash_accounts
             return 0
             ;;
     esac
@@ -119,14 +119,14 @@ _nakedcashd() {
 
             # only parse help if senseful
             if [[ -z "$cur" || "$cur" =~ ^[a-z] ]]; then
-                commands=$(_Nakedcash_rpc help 2>/dev/null | awk '$1 ~ /^[a-z]/ { print $1; }')
+                commands=$(_nakedcash_rpc help 2>/dev/null | awk '$1 ~ /^[a-z]/ { print $1; }')
             fi
 
             COMPREPLY=( $( compgen -W "$helpopts $commands" -- "$cur" ) )
 
             # Prevent space if an argument is desired
             if [[ $COMPREPLY == *= ]]; then
-                compopt -o Nakedcashpace
+                compopt -o nakedcashpace
             fi
             return 0
             ;;

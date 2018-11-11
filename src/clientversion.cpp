@@ -10,10 +10,10 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both nakedcashd and Nakedcash-qt, to make it harder for attackers to
+ * for both nakedcashd and nakedcash-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Nakedcash Core");
+const std::string CLIENT_NAME("nakedcash Core");
 
 /**
  * Client version number

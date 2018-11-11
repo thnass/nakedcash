@@ -35,7 +35,7 @@ void SendMoney(const CTxDestination& address, CAmount nValue, CWalletTx& wtxNew,
         throw JSONRPCError(RPC_WALLET_ERROR, strError);
     }
 
-    // Parse Nakedcash address
+    // Parse nakedcash address
     CScript scriptPubKey = GetScriptForDestination(address);
 
     // Create and send the transaction
@@ -57,8 +57,8 @@ Value obfuscation(const Array& params, bool fHelp)
     
     if (fHelp || params.size() == 0)
         throw runtime_error(
-            "obfuscation <Nakedcashaddress> <amount>\n"
-            "Nakedcashaddress, reset, or auto (AutoDenominate)"
+            "obfuscation <nakedcashaddress> <amount>\n"
+            "nakedcashaddress, reset, or auto (AutoDenominate)"
             "<amount> is a real and will be rounded to the next 0.1" +
             HelpRequiringPassphrase());
 
@@ -79,14 +79,14 @@ Value obfuscation(const Array& params, bool fHelp)
 
     if (params.size() != 2)
         throw runtime_error(
-            "obfuscation <Nakedcashaddress> <amount>\n"
-            "Nakedcashaddress, denominate, or auto (AutoDenominate)"
+            "obfuscation <nakedcashaddress> <amount>\n"
+            "nakedcashaddress, denominate, or auto (AutoDenominate)"
             "<amount> is a real and will be rounded to the next 0.1" +
             HelpRequiringPassphrase());
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Nakedcash address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid nakedcash address");
 
     // Amount
     CAmount nAmount = AmountFromValue(params[1]);
@@ -110,7 +110,7 @@ Value getpoolinfo(const Array& params, bool fHelp)
 
             "\nResult:\n"
             "{\n"
-            "  \"current\": \"addr\",    (string) Nakedcash address of current masternode\n"
+            "  \"current\": \"addr\",    (string) nakedcash address of current masternode\n"
             "  \"state\": xxxx,        (string) unknown\n"
             "  \"entries\": xxxx,      (numeric) Number of entries\n"
             "  \"accepted\": xxxx,     (numeric) Number of entries accepted\n"
@@ -256,7 +256,7 @@ Value listmasternodes(const Array& params, bool fHelp)
             "    \"txhash\": \"hash\",    (string) Collateral transaction hash\n"
             "    \"outidx\": n,         (numeric) Collateral transaction output index\n"
             "    \"status\": s,         (string) Status (ENABLED/EXPIRED/REMOVE/etc)\n"
-            "    \"addr\": \"addr\",      (string) Masternode Nakedcash address\n"
+            "    \"addr\": \"addr\",      (string) Masternode nakedcash address\n"
             "    \"version\": v,        (numeric) Masternode protocol version\n"
             "    \"lastseen\": ttt,     (numeric) The time in seconds since epoch (Jan 1 1970 GMT) of the last seen\n"
             "    \"activetime\": ttt,   (numeric) The time in seconds since epoch (Jan 1 1970 GMT) masternode has been active\n"
@@ -735,7 +735,7 @@ Value getmasternodestatus (const Array& params, bool fHelp)
             "  \"txhash\": \"xxxx\",      (string) Collateral transaction hash\n"
             "  \"outputidx\": n,        (numeric) Collateral transaction output index number\n"
             "  \"netaddr\": \"xxxx\",     (string) Masternode network address\n"
-            "  \"addr\": \"xxxx\",        (string) Nakedcash address for masternode payments\n"
+            "  \"addr\": \"xxxx\",        (string) nakedcash address for masternode payments\n"
             "  \"status\": \"xxxx\",      (string) Masternode status\n"
             "  \"message\": \"xxxx\"      (string) Masternode status message\n"
             "}\n"
@@ -777,7 +777,7 @@ Value getmasternodewinners (const Array& params, bool fHelp)
             "  {\n"
             "    \"nHeight\": n,           (numeric) block height\n"
             "    \"winner\": {\n"
-            "      \"address\": \"xxxx\",    (string) Nakedcash MN Address\n"
+            "      \"address\": \"xxxx\",    (string) nakedcash MN Address\n"
             "      \"nVotes\": n,          (numeric) Number of votes for winner\n"
             "    }\n"
             "  }\n"
@@ -790,7 +790,7 @@ Value getmasternodewinners (const Array& params, bool fHelp)
             "    \"nHeight\": n,           (numeric) block height\n"
             "    \"winner\": [\n"
             "      {\n"
-            "        \"address\": \"xxxx\",  (string) Nakedcash MN Address\n"
+            "        \"address\": \"xxxx\",  (string) nakedcash MN Address\n"
             "        \"nVotes\": n,        (numeric) Number of votes for winner\n"
             "      }\n"
             "      ,...\n"

@@ -168,7 +168,7 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../Nakedcash.qrc"/>
+  <include location="../nakedcash.qrc"/>
  </resources>
  <connections/>
 </ui>

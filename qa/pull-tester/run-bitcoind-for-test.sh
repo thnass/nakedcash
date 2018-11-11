@@ -3,7 +3,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #
-DATADIR="/home/davincci199412/Desktop/Halilonuk/nakedcash_NEW/.Nakedcash"
+DATADIR="/home/davincci199412/Desktop/Halilonuk/nakedcash_NEW/.nakedcash"
 rm -rf "$DATADIR"
 mkdir -p "$DATADIR"/regtest
 touch "$DATADIR/regtest/debug.log"

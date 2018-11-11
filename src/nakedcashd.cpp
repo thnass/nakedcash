@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2018 Nakedcash CORE developers 'https://cash.nakedspace.net'
+// Copyright (c) 2018 nakedcash CORE developers 'https://cash.nakedspace.net'
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -25,8 +25,8 @@
  *
  * \section intro_sec Introduction
  *
- * This is the developer documentation of the reference client for an experimental new digital currency called Nakedcash (http://www.cash.nakedspace.net),
- * which enables instant payments to anyone, anywhere in the world. Nakedcash uses peer-to-peer technology to operate
+ * This is the developer documentation of the reference client for an experimental new digital currency called nakedcash (http://www.cash.nakedspace.net),
+ * which enables instant payments to anyone, anywhere in the world. nakedcash uses peer-to-peer technology to operate
  * with no central authority: managing transactions and issuing money are carried out collectively by the network.
  *
  * The software is a community-driven open source project, released under the MIT license.
@@ -65,18 +65,18 @@ bool AppInit(int argc, char* argv[])
     //
     // Parameters
     //
-    // If Qt is used, parameters/nakedcash.conf are parsed in qt/Nakedcash.cpp's main()
+    // If Qt is used, parameters/nakedcash.conf are parsed in qt/nakedcash.cpp's main()
     ParseParameters(argc, argv);
 
     // Process help and version before taking care about datadir
     if (mapArgs.count("-?") || mapArgs.count("-help") || mapArgs.count("-version")) {
-        std::string strUsage = _("Nakedcash Core Daemon") + " " + _("version") + " " + FormatFullVersion() + "\n";
+        std::string strUsage = _("nakedcash Core Daemon") + " " + _("version") + " " + FormatFullVersion() + "\n";
 
         if (mapArgs.count("-version")) {
             strUsage += LicenseInfo();
         } else {
             strUsage += "\n" + _("Usage:") + "\n" +
-                        "  nakedcashd [options]                     " + _("Start Nakedcash Core Daemon") + "\n";
+                        "  nakedcashd [options]                     " + _("Start nakedcash Core Daemon") + "\n";
 
             strUsage += "\n" + HelpMessage(HMM_BITCOIND);
         }
@@ -112,7 +112,7 @@ bool AppInit(int argc, char* argv[])
         // Command-line RPC
         bool fCommandLine = false;
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "Nakedcash:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "nakedcash:"))
                 fCommandLine = true;
 
         if (fCommandLine) {
@@ -122,7 +122,7 @@ bool AppInit(int argc, char* argv[])
 #ifndef WIN32
         fDaemon = GetBoolArg("-daemon", false);
         if (fDaemon) {
-            fprintf(stdout, "Nakedcash server starting\n");
+            fprintf(stdout, "nakedcash server starting\n");
 
             // Daemonize
             pid_t pid = fork();

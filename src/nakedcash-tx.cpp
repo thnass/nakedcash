@@ -47,10 +47,10 @@ static bool AppInitRawTx(int argc, char* argv[])
 
     if (argc < 2 || mapArgs.count("-?") || mapArgs.count("-help")) {
         // First part of help message is specific to this utility
-        std::string strUsage = _("Nakedcash Core nakedcash-tx utility version") + " " + FormatFullVersion() + "\n\n" +
+        std::string strUsage = _("nakedcash Core nakedcash-tx utility version") + " " + FormatFullVersion() + "\n\n" +
                                _("Usage:") + "\n" +
-                               "  nakedcash-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded Nakedcash transaction") + "\n" +
-                               "  nakedcash-tx [options] -create [commands]   " + _("Create hex-encoded Nakedcash transaction") + "\n" +
+                               "  nakedcash-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded nakedcash transaction") + "\n" +
+                               "  nakedcash-tx [options] -create [commands]   " + _("Create hex-encoded nakedcash transaction") + "\n" +
                                "\n";
 
         fprintf(stdout, "%s", strUsage.c_str());
@@ -552,7 +552,7 @@ static int CommandLineRawTx(int argc, char* argv[])
             if (argc < 2)
                 throw runtime_error("too few parameters");
 
-            // param: hex-encoded Nakedcash transaction
+            // param: hex-encoded nakedcash transaction
             string strHexTx(argv[1]);
             if (strHexTx == "-") // "-" implies standard input
                 strHexTx = readStdin();

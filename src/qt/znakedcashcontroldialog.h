@@ -1,5 +1,5 @@
 // Copyright (c) 2017 The PIVX developers
-// Copyright (c) 2017-2018 The Nakedcash developers
+// Copyright (c) 2017-2018 The nakedcash developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,16 +15,16 @@ class CZerocoinMint;
 class WalletModel;
 
 namespace Ui {
-class ZNakedcashControlDialog;
+class ZnakedcashControlDialog;
 }
 
-class ZNakedcashControlDialog : public QDialog
+class ZnakedcashControlDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit ZNakedcashControlDialog(QWidget *parent);
-    ~ZNakedcashControlDialog();
+    explicit ZnakedcashControlDialog(QWidget *parent);
+    ~ZnakedcashControlDialog();
 
     void setModel(WalletModel* model);
 
@@ -33,7 +33,7 @@ public:
     static std::vector<CZerocoinMint> GetSelectedMints();
 
 private:
-    Ui::ZNakedcashControlDialog *ui;
+    Ui::ZnakedcashControlDialog *ui;
     WalletModel* model;
     PrivacyDialog* privacyDialog;
 

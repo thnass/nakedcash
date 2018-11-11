@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2018 Nakedcash CORE developers 'https://cash.nakedspace.net'
+// Copyright (c) 2018 nakedcash CORE developers 'https://cash.nakedspace.net'
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -238,10 +238,10 @@ Value stop(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Nakedcash server.");
+            "\nStop nakedcash server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "Nakedcash server stopping";
+    return "nakedcash server stopping";
 }
 
 
@@ -318,36 +318,36 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* Nakedcash features */
-        {"Nakedcash", "masternode", &masternode, true, true, false},
-        {"Nakedcash", "listmasternodes", &listmasternodes, true, true, false},
-        {"Nakedcash", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"Nakedcash", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"Nakedcash", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"Nakedcash", "masternodedebug", &masternodedebug, true, true, false},
-        {"Nakedcash", "startmasternode", &startmasternode, true, true, false},
-        {"Nakedcash", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"Nakedcash", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"Nakedcash", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"Nakedcash", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"Nakedcash", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"Nakedcash", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"Nakedcash", "mnbudget", &mnbudget, true, true, false},
-        {"Nakedcash", "preparebudget", &preparebudget, true, true, false},
-        {"Nakedcash", "submitbudget", &submitbudget, true, true, false},
-        {"Nakedcash", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"Nakedcash", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"Nakedcash", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"Nakedcash", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"Nakedcash", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"Nakedcash", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"Nakedcash", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"Nakedcash", "checkbudgets", &checkbudgets, true, true, false},
-        {"Nakedcash", "mnsync", &mnsync, true, true, false},
-        {"Nakedcash", "spork", &spork, true, true, false},
-        {"Nakedcash", "getpoolinfo", &getpoolinfo, true, true, false},
+        /* nakedcash features */
+        {"nakedcash", "masternode", &masternode, true, true, false},
+        {"nakedcash", "listmasternodes", &listmasternodes, true, true, false},
+        {"nakedcash", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"nakedcash", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"nakedcash", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"nakedcash", "masternodedebug", &masternodedebug, true, true, false},
+        {"nakedcash", "startmasternode", &startmasternode, true, true, false},
+        {"nakedcash", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"nakedcash", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"nakedcash", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"nakedcash", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"nakedcash", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"nakedcash", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"nakedcash", "mnbudget", &mnbudget, true, true, false},
+        {"nakedcash", "preparebudget", &preparebudget, true, true, false},
+        {"nakedcash", "submitbudget", &submitbudget, true, true, false},
+        {"nakedcash", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"nakedcash", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"nakedcash", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"nakedcash", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"nakedcash", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"nakedcash", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"nakedcash", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"nakedcash", "checkbudgets", &checkbudgets, true, true, false},
+        {"nakedcash", "mnsync", &mnsync, true, true, false},
+        {"nakedcash", "spork", &spork, true, true, false},
+        {"nakedcash", "getpoolinfo", &getpoolinfo, true, true, false},
 #ifdef ENABLE_WALLET
-        {"Nakedcash", "obfuscation", &obfuscation, false, false, true}, /* not threadSafe because of SendMoney */
+        {"nakedcash", "obfuscation", &obfuscation, false, false, true}, /* not threadSafe because of SendMoney */
 
         /* Wallet */
         {"wallet", "addmultisigaddress", &addmultisigaddress, true, false, true},
@@ -626,16 +626,16 @@ void StartRPCThreads()
         unsigned char rand_pwd[32];
         GetRandBytes(rand_pwd, 32);
         uiInterface.ThreadSafeMessageBox(strprintf(
-                                             _("To use nakedcashd, or the -server option to Nakedcash-qt, you must set an rpcpassword in the configuration file:\n"
+                                             _("To use nakedcashd, or the -server option to nakedcash-qt, you must set an rpcpassword in the configuration file:\n"
                                                "%s\n"
                                                "It is recommended you use the following random password:\n"
-                                               "rpcuser=Nakedcashrpc\n"
+                                               "rpcuser=nakedcashrpc\n"
                                                "rpcpassword=%s\n"
                                                "(you do not need to remember this password)\n"
                                                "The username and password MUST NOT be the same.\n"
                                                "If the file does not exist, create it with owner-readable-only file permissions.\n"
                                                "It is also recommended to set alertnotify so you are notified of problems;\n"
-                                               "for example: alertnotify=echo %%s | mail -s \"Nakedcash Alert\" admin@foo.com\n"),
+                                               "for example: alertnotify=echo %%s | mail -s \"nakedcash Alert\" admin@foo.com\n"),
                                              GetConfigFile().string(),
                                              EncodeBase58(&rand_pwd[0], &rand_pwd[0] + 32)),
             "", CClientUIInterface::MSG_ERROR | CClientUIInterface::SECURE);

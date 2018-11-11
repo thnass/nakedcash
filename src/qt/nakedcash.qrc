@@ -38,12 +38,12 @@
         <file alias="tx_input">res/icons/tx_input.png</file>
         <file alias="tx_output">res/icons/tx_output.png</file>
         <file alias="tx_inout">res/icons/tx_inout.png</file>
-        <file alias="unit_Nakedcash">res/icons/unit_Nakedcash.png</file>
-        <file alias="unit_mNakedcash">res/icons/unit_mNakedcash.png</file>
-        <file alias="unit_uNakedcash">res/icons/unit_uNakedcash.png</file>
-        <file alias="unit_tNakedcash">res/icons/unit_tNakedcash.png</file>
-        <file alias="unit_tmNakedcash">res/icons/unit_tmNakedcash.png</file>
-        <file alias="unit_tuNakedcash">res/icons/unit_tuNakedcash.png</file>
+        <file alias="unit_nakedcash">res/icons/unit_nakedcash.png</file>
+        <file alias="unit_mnakedcash">res/icons/unit_mnakedcash.png</file>
+        <file alias="unit_unakedcash">res/icons/unit_unakedcash.png</file>
+        <file alias="unit_tnakedcash">res/icons/unit_tnakedcash.png</file>
+        <file alias="unit_tmnakedcash">res/icons/unit_tmnakedcash.png</file>
+        <file alias="unit_tunakedcash">res/icons/unit_tunakedcash.png</file>
         <file alias="lock_closed">res/icons/lock_closed.png</file>
         <file alias="lock_open">res/icons/lock_open.png</file>
         <file alias="key">res/icons/key.png</file>
@@ -59,7 +59,7 @@
     </qresource>
     <qresource prefix="/images">
         <file alias="about">res/images/about.png</file>
-        <file alias="Nakedcash_logo_horizontal">res/images/Nakedcash_logo_horizontal.png</file>
+        <file alias="nakedcash_logo_horizontal">res/images/nakedcash_logo_horizontal.png</file>
         <file alias="downArrow">res/images/downArrow.png</file>
         <file alias="downArrow_small">res/images/downArrow_small.png</file>
         <file alias="upArrow_small">res/images/upArrow_small.png</file>

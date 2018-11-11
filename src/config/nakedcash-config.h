@@ -271,13 +271,13 @@
 #define PACKAGE_BUGREPORT "www.cash.nakedspace.net"
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME "Nakedcash Core"
+#define PACKAGE_NAME "nakedcash Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "Nakedcash Core 1.0.5"
+#define PACKAGE_STRING "nakedcash Core 1.0.5"
 
 /* Define to the one symbol short name of this package. */
-#define PACKAGE_TARNAME "Nakedcash"
+#define PACKAGE_TARNAME "nakedcash"
 
 /* Define to the home page for this package. */
 #define PACKAGE_URL ""

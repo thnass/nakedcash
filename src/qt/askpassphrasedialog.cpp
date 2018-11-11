@@ -117,7 +117,7 @@ void AskPassphraseDialog::accept()
                 if (model->setWalletEncrypted(true, newpass1)) {
                     QMessageBox::warning(this, tr("Wallet encrypted"),
                         "<qt>" +
-                            tr("Nakedcash will close now to finish the encryption process. "
+                            tr("nakedcash will close now to finish the encryption process. "
                                "Remember that encrypting your wallet cannot fully protect "
                                "your NAKDs from being stolen by malware infecting your computer.") +
                             "<br><br><b>" +

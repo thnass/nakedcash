@@ -13,7 +13,7 @@ can be found in the contrib/init folder.
 1. Service User
 ---------------------------------
 
-All three startup configurations assume the existence of a "Nakedcash" user
+All three startup configurations assume the existence of a "nakedcash" user
 and group.  They must be created before attempting to use these scripts.
 
 2. Configuration
@@ -52,9 +52,9 @@ PID file:            /var/run/nakedcashd/nakedcashd.pid (OpenRC and Upstart)
                      /var/lib/nakedcashd/nakedcashd.pid (systemd)
 
 The configuration file, PID directory (if applicable) and data directory
-should all be owned by the Nakedcash user and group.  It is advised for security
+should all be owned by the nakedcash user and group.  It is advised for security
 reasons to make the configuration file and data directory only readable by the
-Nakedcash user and group.  Access to nakedcash-cli and other nakedcashd rpc clients
+nakedcash user and group.  Access to nakedcash-cli and other nakedcashd rpc clients
 can then be controlled by group membership.
 
 4. Installing Service Configuration

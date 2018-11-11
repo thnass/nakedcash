@@ -446,10 +446,10 @@ Value getblocktemplate(const Array& params, bool fHelp)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid mode");
 
     if (vNodes.empty())
-        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "Nakedcash is not connected!");
+        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "nakedcash is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Nakedcash is downloading blocks...");
+        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "nakedcash is downloading blocks...");
 
     static unsigned int nTransactionsUpdatedLast;
 

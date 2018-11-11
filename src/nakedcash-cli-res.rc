@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Nakedcash"
-            VALUE "FileDescription",    "nakedcash-cli (OSS RPC client for Nakedcash)"
+            VALUE "CompanyName",        "nakedcash"
+            VALUE "FileDescription",    "nakedcash-cli (OSS RPC client for nakedcash)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "nakedcash-cli"
             VALUE "LegalCopyright",     COPYRIGHT_STR

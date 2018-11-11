@@ -1,6 +1,6 @@
 [Protocol]
-exec=Nakedcash-qt '%u'
-protocol=Nakedcash
+exec=nakedcash-qt '%u'
+protocol=nakedcash
 input=none
 output=none
 helper=true

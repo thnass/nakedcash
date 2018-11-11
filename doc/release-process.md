@@ -24,11 +24,11 @@ Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
     git clone https://github.com/thnass/gitian.sigs.git
-    git clone https://github.com/thnass/Nakedcash-detached-sigs.git
+    git clone https://github.com/thnass/nakedcash-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/thnass/Nakedcash.git
+    git clone https://github.com/thnass/nakedcash.git
 
-### Nakedcash maintainers/release engineers, suggestion for writing release notes
+### nakedcash maintainers/release engineers, suggestion for writing release notes
 
 Write release notes. git shortlog helps a lot, for example:
 
@@ -49,7 +49,7 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 
 Setup Gitian descriptors:
 
-    pushd ./Nakedcash
+    pushd ./nakedcash
     export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
     export VERSION=(new version, e.g. 0.8.0)
     git fetch
@@ -83,7 +83,7 @@ Create the OS X SDK tarball, see the [OS X readme](README_osx.md) for details, a
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
     pushd ./gitian-builder
-    make -C ../Nakedcash/depends download SOURCES_PATH=`pwd`/cache/common
+    make -C ../nakedcash/depends download SOURCES_PATH=`pwd`/cache/common
     popd
 
 Only missing files will be fetched, so this is safe to re-run for each build.
@@ -91,55 +91,55 @@ Only missing files will be fetched, so this is safe to re-run for each build.
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 
     pushd ./gitian-builder
-    ./bin/gbuild --url Nakedcash=/path/to/Nakedcash,signature=/path/to/sigs {rest of arguments}
+    ./bin/gbuild --url nakedcash=/path/to/nakedcash,signature=/path/to/sigs {rest of arguments}
     popd
 
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign Nakedcash Core for Linux, Windows, and OS X:
+### Build and sign nakedcash Core for Linux, Windows, and OS X:
 
     pushd ./gitian-builder
-    ./bin/gbuild --memory 3000 --commit Nakedcash=v${VERSION} ../Nakedcash/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../Nakedcash/contrib/gitian-descriptors/gitian-linux.yml
-    mv build/out/Nakedcash-*.tar.gz build/out/src/Nakedcash-*.tar.gz ../
+    ./bin/gbuild --memory 3000 --commit nakedcash=v${VERSION} ../nakedcash/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../nakedcash/contrib/gitian-descriptors/gitian-linux.yml
+    mv build/out/nakedcash-*.tar.gz build/out/src/nakedcash-*.tar.gz ../
 
-    ./bin/gbuild --memory 3000 --commit Nakedcash=v${VERSION} ../Nakedcash/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../Nakedcash/contrib/gitian-descriptors/gitian-win.yml
-    mv build/out/Nakedcash-*-win-unsigned.tar.gz inputs/Nakedcash-win-unsigned.tar.gz
-    mv build/out/Nakedcash-*.zip build/out/Nakedcash-*.exe ../
+    ./bin/gbuild --memory 3000 --commit nakedcash=v${VERSION} ../nakedcash/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../nakedcash/contrib/gitian-descriptors/gitian-win.yml
+    mv build/out/nakedcash-*-win-unsigned.tar.gz inputs/nakedcash-win-unsigned.tar.gz
+    mv build/out/nakedcash-*.zip build/out/nakedcash-*.exe ../
 
-    ./bin/gbuild --memory 3000 --commit Nakedcash=v${VERSION} ../Nakedcash/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../Nakedcash/contrib/gitian-descriptors/gitian-osx.yml
-    mv build/out/Nakedcash-*-osx-unsigned.tar.gz inputs/Nakedcash-osx-unsigned.tar.gz
-    mv build/out/Nakedcash-*.tar.gz build/out/Nakedcash-*.dmg ../
+    ./bin/gbuild --memory 3000 --commit nakedcash=v${VERSION} ../nakedcash/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../nakedcash/contrib/gitian-descriptors/gitian-osx.yml
+    mv build/out/nakedcash-*-osx-unsigned.tar.gz inputs/nakedcash-osx-unsigned.tar.gz
+    mv build/out/nakedcash-*.tar.gz build/out/nakedcash-*.dmg ../
 
-    ./bin/gbuild --memory 3000 --commit Nakedcash=v${VERSION} ../Nakedcash/contrib/gitian-descriptors/gitian-aarch64.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../Nakedcash/contrib/gitian-descriptors/gitian-aarch64.yml
-    mv build/out/Nakedcash-*.tar.gz build/out/src/Nakedcash-*.tar.gz ../
+    ./bin/gbuild --memory 3000 --commit nakedcash=v${VERSION} ../nakedcash/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../nakedcash/contrib/gitian-descriptors/gitian-aarch64.yml
+    mv build/out/nakedcash-*.tar.gz build/out/src/nakedcash-*.tar.gz ../
     popd
 
 Build output expected:
 
-  1. source tarball (`Nakedcash-${VERSION}.tar.gz`)
-  2. linux 32-bit and 64-bit dist tarballs (`Nakedcash-${VERSION}-linux[32|64].tar.gz`)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (`Nakedcash-${VERSION}-win[32|64]-setup-unsigned.exe`, `Nakedcash-${VERSION}-win[32|64].zip`)
-  4. OS X unsigned installer and dist tarball (`Nakedcash-${VERSION}-osx-unsigned.dmg`, `Nakedcash-${VERSION}-osx64.tar.gz`)
+  1. source tarball (`nakedcash-${VERSION}.tar.gz`)
+  2. linux 32-bit and 64-bit dist tarballs (`nakedcash-${VERSION}-linux[32|64].tar.gz`)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (`nakedcash-${VERSION}-win[32|64]-setup-unsigned.exe`, `nakedcash-${VERSION}-win[32|64].zip`)
+  4. OS X unsigned installer and dist tarball (`nakedcash-${VERSION}-osx-unsigned.dmg`, `nakedcash-${VERSION}-osx64.tar.gz`)
   5. Gitian signatures (in `gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
 Add other gitian builders keys to your gpg keyring, and/or refresh keys.
 
-    gpg --import Nakedcash/contrib/gitian-keys/*.gpg
+    gpg --import nakedcash/contrib/gitian-keys/*.gpg
     gpg --refresh-keys
 
 Verify the signatures
 
     pushd ./gitian-builder
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../Nakedcash/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../Nakedcash/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../Nakedcash/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../Nakedcash/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../nakedcash/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../nakedcash/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../nakedcash/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../nakedcash/contrib/gitian-descriptors/gitian-aarch64.yml
     popd
 
 ### Next steps:
@@ -161,22 +161,22 @@ Codesigner only: Create Windows/OS X detached signatures:
 
 Codesigner only: Sign the osx binary:
 
-    transfer Nakedcash-osx-unsigned.tar.gz to osx for signing
-    tar xf Nakedcash-osx-unsigned.tar.gz
+    transfer nakedcash-osx-unsigned.tar.gz to osx for signing
+    tar xf nakedcash-osx-unsigned.tar.gz
     ./detached-sig-create.sh -s "Key ID"
     Enter the keychain password and authorize the signature
     Move signature-osx.tar.gz back to the gitian host
 
 Codesigner only: Sign the windows binaries:
 
-    tar xf Nakedcash-win-unsigned.tar.gz
+    tar xf nakedcash-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
 
 Codesigner only: Commit the detached codesign payloads:
 
-    cd ~/Nakedcash-detached-sigs
+    cd ~/nakedcash-detached-sigs
     checkout the appropriate branch for this release series
     rm -rf *
     tar xf signature-osx.tar.gz
@@ -189,25 +189,25 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/OS X detached signatures:
 
 - Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [Nakedcash-detached-sigs](https://github.com/thnass/Nakedcash-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [nakedcash-detached-sigs](https://github.com/thnass/nakedcash-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed OS X binary:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../Nakedcash/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../Nakedcash/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../Nakedcash/contrib/gitian-descriptors/gitian-osx-signer.yml
-    mv build/out/Nakedcash-osx-signed.dmg ../Nakedcash-${VERSION}-osx.dmg
+    ./bin/gbuild -i --commit signature=v${VERSION} ../nakedcash/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../nakedcash/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../nakedcash/contrib/gitian-descriptors/gitian-osx-signer.yml
+    mv build/out/nakedcash-osx-signed.dmg ../nakedcash-${VERSION}-osx.dmg
     popd
 
 Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../Nakedcash/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../Nakedcash/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../Nakedcash/contrib/gitian-descriptors/gitian-win-signer.yml
-    mv build/out/Nakedcash-*win64-setup.exe ../Nakedcash-${VERSION}-win64-setup.exe
-    mv build/out/Nakedcash-*win32-setup.exe ../Nakedcash-${VERSION}-win32-setup.exe
+    ./bin/gbuild -i --commit signature=v${VERSION} ../nakedcash/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../nakedcash/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../nakedcash/contrib/gitian-descriptors/gitian-win-signer.yml
+    mv build/out/nakedcash-*win64-setup.exe ../nakedcash-${VERSION}-win64-setup.exe
+    mv build/out/nakedcash-*win32-setup.exe ../nakedcash-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -229,17 +229,17 @@ sha256sum * > SHA256SUMS
 
 The list of files should be:
 ```
-Nakedcash-${VERSION}-aarch64-linux-gnu.tar.gz
-Nakedcash-${VERSION}-arm-linux-gnueabihf.tar.gz
-Nakedcash-${VERSION}-i686-pc-linux-gnu.tar.gz
-Nakedcash-${VERSION}-x86_64-linux-gnu.tar.gz
-Nakedcash-${VERSION}-osx64.tar.gz
-Nakedcash-${VERSION}-osx.dmg
-Nakedcash-${VERSION}.tar.gz
-Nakedcash-${VERSION}-win32-setup.exe
-Nakedcash-${VERSION}-win32.zip
-Nakedcash-${VERSION}-win64-setup.exe
-Nakedcash-${VERSION}-win64.zip
+nakedcash-${VERSION}-aarch64-linux-gnu.tar.gz
+nakedcash-${VERSION}-arm-linux-gnueabihf.tar.gz
+nakedcash-${VERSION}-i686-pc-linux-gnu.tar.gz
+nakedcash-${VERSION}-x86_64-linux-gnu.tar.gz
+nakedcash-${VERSION}-osx64.tar.gz
+nakedcash-${VERSION}-osx.dmg
+nakedcash-${VERSION}.tar.gz
+nakedcash-${VERSION}-win32-setup.exe
+nakedcash-${VERSION}-win32.zip
+nakedcash-${VERSION}-win64-setup.exe
+nakedcash-${VERSION}-win64.zip
 ```
 The `*-debug*` files generated by the gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested
@@ -261,10 +261,10 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
   - bitcointalk announcement thread
 
-  - Optionally twitter, reddit /r/Nakedcash, ... but this will usually sort out itself
+  - Optionally twitter, reddit /r/nakedcash, ... but this will usually sort out itself
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/thnass/Nakedcash/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/thnass/nakedcash/releases/new) with a link to the archived release notes.
 
   - Celebrate

@@ -96,7 +96,7 @@ public:
 };
 
 /**
- * Nakedcash RPC command dispatcher.
+ * nakedcash RPC command dispatcher.
  */
 class CRPCTable
 {

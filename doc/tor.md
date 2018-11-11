@@ -1,7 +1,7 @@
-TOR SUPPORT IN Nakedcash
+TOR SUPPORT IN nakedcash
 =======================
 
-It is possible to run Nakedcash as a Tor hidden service, and connect to such services.
+It is possible to run nakedcash as a Tor hidden service, and connect to such services.
 
 The following directions assume you have a Tor proxy running on port 9050. Many
 distributions default to having a SOCKS proxy listening on port 9050, but others
@@ -10,10 +10,10 @@ port. See [Tor Project FAQ:TBBSocksPort](https://www.torproject.org/docs/faq.htm
 for how to properly configure Tor.
 
 
-Run Nakedcash behind a Tor proxy
+Run nakedcash behind a Tor proxy
 ----------------------------------
 
-The first step is running Nakedcash behind a Tor proxy. This will already make all
+The first step is running nakedcash behind a Tor proxy. This will already make all
 outgoing connections be anonymized, but more is possible.
 ```
 -proxy=ip:port  Set the proxy server. If SOCKS5 is selected (default), this proxy
@@ -46,7 +46,7 @@ In a typical situation, this suffices to run behind a Tor proxy:
 ./nakedcashd -proxy=127.0.0.1:9050
 ```
 
-Run a Nakedcash hidden server
+Run a nakedcash hidden server
 -------------------------------
 
 If you configure your Tor system accordingly, it is possible to make your node also
@@ -71,10 +71,10 @@ NumEntryGuards 8
 The directory can be different of course, but (both) port numbers should be equal to
 your nakedcashd's P2P listen port (7291 by default).
 ```
--externalip=X   You can tell Nakedcash about its publicly reachable address using
+-externalip=X   You can tell nakedcash about its publicly reachable address using
                 this option, and this can be a .onion address. Given the above
                 configuration, you can find your onion address in
-                /var/lib/tor/Nakedcash-service/hostname. Onion addresses are given
+                /var/lib/tor/nakedcash-service/hostname. Onion addresses are given
                 preference for your node to advertize itself with, for connections
                 coming from unroutable addresses (such as 127.0.0.1, where the
                 Tor proxy typically runs).
@@ -110,7 +110,7 @@ for normal IPv4/IPv6 communication, use:
 ./nakedcashd -onion=127.0.0.1:9050 -externalip=dnetzj6l4cvo2fxy.onion:888 -discover
 ```
 
-List of known Nakedcash Tor relays
+List of known nakedcash Tor relays
 ------------------------------------
 ```
 onion:

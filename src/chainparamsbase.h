@@ -10,7 +10,7 @@
 
 /**
  * CBaseChainParams defines the base parameters (shared between nakedcash-cli and nakedcashd)
- * of a given instance of the Nakedcash system.
+ * of a given instance of the nakedcash system.
  */
 class CBaseChainParams
 {

@@ -54,7 +54,7 @@ public:
     ~BitcoinGUI();
 
     /** Set the client model.
-        The client model represents the part of the core that communicates with the P2P network, and is wallet-agNakedcashtic.
+        The client model represents the part of the core that communicates with the P2P network, and is wallet-agnakedcashtic.
     */
     void setClientModel(ClientModel* clientModel);
 
@@ -271,7 +271,7 @@ private:
 
     /** Shows context menu with Display Unit options by the mouse coordinates */
     void onDisplayUnitsClicked(const QPoint& point);
-    /** Creates context menu, its actions, and Nakedcashs up all the relevant signals for mouse events. */
+    /** Creates context menu, its actions, and nakedcashs up all the relevant signals for mouse events. */
     void createContextMenu();
 
 private slots:

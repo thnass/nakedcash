@@ -333,7 +333,7 @@ HEADERS += src/activemasternode.h \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.h \
            src/crypto/aes_helper.c \
            src/qt/bitcoinamountfield.moc \
-           src/qt/Nakedcash.moc \
+           src/qt/nakedcash.moc \
            src/qt/intro.moc \
            src/qt/overviewpage.moc \
            src/qt/rpcconsole.moc \
@@ -376,7 +376,7 @@ SOURCES += src/activemasternode.cpp \
            src/obfuscation.cpp \
            src/nakedcash-cli.cpp \
            src/nakedcash-tx.cpp \
-           src/Nakedcash.cpp \
+           src/nakedcash.cpp \
            src/db.cpp \
            src/eccryptoverify.cpp \
            src/ecwrapper.cpp \
@@ -471,8 +471,8 @@ SOURCES += src/activemasternode.cpp \
            src/qt/coincontroltreewidget.cpp \
            src/qt/csvmodelwriter.cpp \
            src/qt/obfuscationconfig.cpp \
-           src/qt/Nakedcash.cpp \
-           src/qt/Nakedcashstrings.cpp \
+           src/qt/nakedcash.cpp \
+           src/qt/nakedcashstrings.cpp \
            src/qt/editaddressdialog.cpp \
            src/qt/guiutil.cpp \
            src/qt/intro.cpp \
@@ -550,7 +550,7 @@ SOURCES += src/activemasternode.cpp \
            src/test/sighash_tests.cpp \
            src/test/sigopcount_tests.cpp \
            src/test/skiplist_tests.cpp \
-           src/test/test_Nakedcash.cpp \
+           src/test/test_nakedcash.cpp \
            src/test/timedata_tests.cpp \
            src/test/transaction_tests.cpp \
            src/test/uint256_tests.cpp \
@@ -641,21 +641,21 @@ SOURCES += src/activemasternode.cpp \
            src/leveldb/helpers/memenv/memenv.cc \
            src/leveldb/helpers/memenv/memenv_test.cc \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.c
-RESOURCES += src/qt/Nakedcash.qrc src/qt/Nakedcash_locale.qrc
+RESOURCES += src/qt/nakedcash.qrc src/qt/nakedcash_locale.qrc
 
-TRANSLATIONS += src/qt/locale/Nakedcash_bg.ts \
-                src/qt/locale/Nakedcash_de.ts \
-                src/qt/locale/Nakedcash_en.ts \
-                src/qt/locale/Nakedcash_es.ts \
-                src/qt/locale/Nakedcash_fi.ts \
-                src/qt/locale/Nakedcash_fr.ts \
-                src/qt/locale/Nakedcash_it.ts \
-                src/qt/locale/Nakedcash_ja.ts \
-                src/qt/locale/Nakedcash_pl.ts \
-                src/qt/locale/Nakedcash_pt.ts \
-                src/qt/locale/Nakedcash_ru.ts \
-                src/qt/locale/Nakedcash_sk.ts \
-                src/qt/locale/Nakedcash_sv.ts \
-                src/qt/locale/Nakedcash_vi.ts \
-                src/qt/locale/Nakedcash_zh_CN.ts \
-                src/qt/locale/Nakedcash_zh_TW.ts
+TRANSLATIONS += src/qt/locale/nakedcash_bg.ts \
+                src/qt/locale/nakedcash_de.ts \
+                src/qt/locale/nakedcash_en.ts \
+                src/qt/locale/nakedcash_es.ts \
+                src/qt/locale/nakedcash_fi.ts \
+                src/qt/locale/nakedcash_fr.ts \
+                src/qt/locale/nakedcash_it.ts \
+                src/qt/locale/nakedcash_ja.ts \
+                src/qt/locale/nakedcash_pl.ts \
+                src/qt/locale/nakedcash_pt.ts \
+                src/qt/locale/nakedcash_ru.ts \
+                src/qt/locale/nakedcash_sk.ts \
+                src/qt/locale/nakedcash_sv.ts \
+                src/qt/locale/nakedcash_vi.ts \
+                src/qt/locale/nakedcash_zh_CN.ts \
+                src/qt/locale/nakedcash_zh_TW.ts
