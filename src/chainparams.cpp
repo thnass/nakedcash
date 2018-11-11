@@ -53,17 +53,17 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 //    timestamp before)
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
-    boost::assign::map_list_of(0, uint256("0x00000b71b4612a70bfc44640727eb414e99db791aaffc1bd7c1e51d195260d53"));
+    boost::assign::map_list_of(0, uint256("0x0000099312ec33a25676f7df11530892e1d63e2b15f98e60a77ea16cf2280f18"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1540026579, // * UNIX timestamp of last checkpoint block
+    1541931237, // * UNIX timestamp of last checkpoint block
     1,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-    boost::assign::map_list_of(0, uint256("0x0"));
+    boost::assign::map_list_of(0, uint256("0x0000099312ec33a25676f7df11530892e1d63e2b15f98e60a77ea16cf2280f18"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
     0,
@@ -140,14 +140,13 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1540026579;
+        genesis.nTime = 1541931237;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 2260063;
-
+        genesis.nNonce = 548244;
 
         hashGenesisBlock = genesis.GetHash();
-		assert(hashGenesisBlock == uint256("0x00000b71b4612a70bfc44640727eb414e99db791aaffc1bd7c1e51d195260d53"));
-        assert(genesis.hashMerkleRoot == uint256("0x7eb5612ad749346e26b0da557933c467d0314892bd39549c25b6169f07823c52"));
+		assert(hashGenesisBlock == uint256("0x0000099312ec33a25676f7df11530892e1d63e2b15f98e60a77ea16cf2280f18"));
+        assert(genesis.hashMerkleRoot == uint256("0xedf10e746b2c38aaf7600d093f22e15a840aa51f16a88c385bc82c18fdf33972"));
 
         vSeeds.push_back(CDNSSeedData("seed1", "seed1.cash.nakedspace.net"));
         vSeeds.push_back(CDNSSeedData("seed2", "seed2.cash.nakedspace.net"));
@@ -179,7 +178,7 @@ public:
 
         nPoolMaxTransactions = 3;
         strSporkKey = "046366a731648849b3c977ae1bf0dd0ba3c3fd784e9b9c4a6a7eb7b59ef20c0e3623eb046706bc3fe9abd8265228d56c35b594d03b06c5363692f99da008db3a81";
-        strObfuscationPoolDummyAddress = "SWSSzyG7DgbHXntZDYuVdBR8dGkfdjgtEg";
+        strObfuscationPoolDummyAddress = "NnSRzyG9DgbWXntZDYuVdBR8dGkfdjgtEg";
         nStartMasternodePayments = genesis.nTime + 86400; // 24 hours after genesis
 
         /** Zerocoin */
@@ -240,11 +239,11 @@ public:
         nBlockLastGoodCheckpoint = 9891730; //Last valid accumulator checkpoint
         
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1540026579;
-        genesis.nNonce = 2260063;
+        genesis.nTime = 1541931237;
+        genesis.nNonce = 548244;
 
         hashGenesisBlock = genesis.GetHash();
-		assert(hashGenesisBlock == uint256("0x00000b71b4612a70bfc44640727eb414e99db791aaffc1bd7c1e51d195260d53"));
+		assert(hashGenesisBlock == uint256("0x0000099312ec33a25676f7df11530892e1d63e2b15f98e60a77ea16cf2280f18"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -272,7 +271,7 @@ public:
 
         nPoolMaxTransactions = 2;
         strSporkKey = "046366a731648849b3c977ae1bf0dd0ba3c3fd784e9b9c4a6a7eb7b59ef20c0e3623eb046706bc3fe9abd8265228d56c35b594d03b06c5363692f99da008db3a81";
-        strObfuscationPoolDummyAddress = "1CBMmVaYtiMDkMR9xPwrmRSqCXJfAcUMqW";
+        strObfuscationPoolDummyAddress = "1uBWmVaNtiMDkMR9xPwrmRSqCXJfAcUMqW";
         nStartMasternodePayments = genesis.nTime + 86400; // 24 hours after genesis
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
                                        // here because we only have a 8 block finalization window on testnet
@@ -305,7 +304,7 @@ public:
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
         nTargetTimespan = 24 * 60 * 60; // Nakedcash: 1 day
-        nTargetSpacing = 3 * 60;        // Nakedcash: 1 minutes
+        nTargetSpacing = 3 * 60;        // Nakedcash: 3 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1536799820;
         genesis.nBits = 0x207fffff;
