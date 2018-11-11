@@ -31,7 +31,7 @@ commitFiles=true
 read -d '' usage <<- EOF
 Usage: $scriptName [-c|u|v|b|s|B|o|h|j|m|] signer version
 
-Run this script from the directory containing the Nakedcash, gitian-builder, gitian.sigs, and Nakedcash-detached-sigs.
+Run this script from the directory containing the nakedcash, gitian-builder, gitian.sigs, and nakedcash-detached-sigs.
 
 Arguments:
 signer          GPG signer to sign each build assert file
@@ -252,7 +252,7 @@ then
 fi
 
 # Set up build
-pushd ./Nakedcash
+pushd ./nakedcash
 git fetch
 git checkout ${COMMIT}
 popd
@@ -261,7 +261,7 @@ popd
 if [[ $build = true ]]
 then
 	# Make output folder
-	mkdir -p ./Nakedcash-binaries/${VERSION}
+	mkdir -p ./nakedcash-binaries/${VERSION}
 
 	# Build Dependencies
 	echo ""
@@ -271,7 +271,7 @@ then
 	mkdir -p inputs
 	wget -N -P inputs $osslPatchUrl
 	wget -N -P inputs $osslTarUrl
-	make -C ../Nakedcash/depends download SOURCES_PATH=`pwd`/cache/common
+	make -C ../nakedcash/depends download SOURCES_PATH=`pwd`/cache/common
 
 	# Linux
 	if [[ $linux = true ]]
@@ -279,9 +279,9 @@ then
             echo ""
 	    echo "Compiling ${VERSION} Linux"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit Nakedcash=${COMMIT} --url Nakedcash=${url} ../Nakedcash/contrib/gitian-descriptors/gitian-linux.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../Nakedcash/contrib/gitian-descriptors/gitian-linux.yml
-	    mv build/out/Nakedcash-*.tar.gz build/out/src/Nakedcash-*.tar.gz ../Nakedcash-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit nakedcash=${COMMIT} --url nakedcash=${url} ../nakedcash/contrib/gitian-descriptors/gitian-linux.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../nakedcash/contrib/gitian-descriptors/gitian-linux.yml
+	    mv build/out/nakedcash-*.tar.gz build/out/src/nakedcash-*.tar.gz ../nakedcash-binaries/${VERSION}
 	fi
 	# Windows
 	if [[ $windows = true ]]
@@ -289,10 +289,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit Nakedcash=${COMMIT} --url Nakedcash=${url} ../Nakedcash/contrib/gitian-descriptors/gitian-win.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../Nakedcash/contrib/gitian-descriptors/gitian-win.yml
-	    mv build/out/Nakedcash-*-win-unsigned.tar.gz inputs/Nakedcash-win-unsigned.tar.gz
-	    mv build/out/Nakedcash-*.zip build/out/Nakedcash-*.exe ../Nakedcash-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit nakedcash=${COMMIT} --url nakedcash=${url} ../nakedcash/contrib/gitian-descriptors/gitian-win.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../nakedcash/contrib/gitian-descriptors/gitian-win.yml
+	    mv build/out/nakedcash-*-win-unsigned.tar.gz inputs/nakedcash-win-unsigned.tar.gz
+	    mv build/out/nakedcash-*.zip build/out/nakedcash-*.exe ../nakedcash-binaries/${VERSION}
 	fi
 	# Mac OSX
 	if [[ $osx = true ]]
@@ -300,10 +300,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit Nakedcash=${COMMIT} --url Nakedcash=${url} ../Nakedcash/contrib/gitian-descriptors/gitian-osx.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../Nakedcash/contrib/gitian-descriptors/gitian-osx.yml
-	    mv build/out/Nakedcash-*-osx-unsigned.tar.gz inputs/Nakedcash-osx-unsigned.tar.gz
-	    mv build/out/Nakedcash-*.tar.gz build/out/Nakedcash-*.dmg ../Nakedcash-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit nakedcash=${COMMIT} --url nakedcash=${url} ../nakedcash/contrib/gitian-descriptors/gitian-osx.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../nakedcash/contrib/gitian-descriptors/gitian-osx.yml
+	    mv build/out/nakedcash-*-osx-unsigned.tar.gz inputs/nakedcash-osx-unsigned.tar.gz
+	    mv build/out/nakedcash-*.tar.gz build/out/nakedcash-*.dmg ../nakedcash-binaries/${VERSION}
 	fi
 	# AArch64
 	if [[ $aarch64 = true ]]
@@ -311,9 +311,9 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} AArch64"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit Nakedcash=${COMMIT} --url Nakedcash=${url} ../Nakedcash/contrib/gitian-descriptors/gitian-aarch64.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-aarch64 --destination ../gitian.sigs/ ../Nakedcash/contrib/gitian-descriptors/gitian-aarch64.yml
-	    mv build/out/Nakedcash-*.tar.gz build/out/src/Nakedcash-*.tar.gz ../Nakedcash-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit nakedcash=${COMMIT} --url nakedcash=${url} ../nakedcash/contrib/gitian-descriptors/gitian-aarch64.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-aarch64 --destination ../gitian.sigs/ ../nakedcash/contrib/gitian-descriptors/gitian-aarch64.yml
+	    mv build/out/nakedcash-*.tar.gz build/out/src/nakedcash-*.tar.gz ../nakedcash-binaries/${VERSION}
 	popd
 
         if [[ $commitFiles = true ]]
@@ -340,32 +340,32 @@ then
 	echo ""
 	echo "Verifying v${VERSION} Linux"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../Nakedcash/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../nakedcash/contrib/gitian-descriptors/gitian-linux.yml
 	# Windows
 	echo ""
 	echo "Verifying v${VERSION} Windows"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../Nakedcash/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../nakedcash/contrib/gitian-descriptors/gitian-win.yml
 	# Mac OSX
 	echo ""
 	echo "Verifying v${VERSION} Mac OSX"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../Nakedcash/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../nakedcash/contrib/gitian-descriptors/gitian-osx.yml
 	# AArch64
 	echo ""
 	echo "Verifying v${VERSION} AArch64"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../Nakedcash/contrib/gitian-descriptors/gitian-aarch64.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../nakedcash/contrib/gitian-descriptors/gitian-aarch64.yml
 	# Signed Windows
 	echo ""
 	echo "Verifying v${VERSION} Signed Windows"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../Nakedcash/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../nakedcash/contrib/gitian-descriptors/gitian-osx-signer.yml
 	# Signed Mac OSX
 	echo ""
 	echo "Verifying v${VERSION} Signed Mac OSX"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../Nakedcash/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../nakedcash/contrib/gitian-descriptors/gitian-osx-signer.yml
 	popd
 fi
 
@@ -380,10 +380,10 @@ then
 	    echo ""
 	    echo "Signing ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../Nakedcash/contrib/gitian-descriptors/gitian-win-signer.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../Nakedcash/contrib/gitian-descriptors/gitian-win-signer.yml
-	    mv build/out/Nakedcash-*win64-setup.exe ../Nakedcash-binaries/${VERSION}
-	    mv build/out/Nakedcash-*win32-setup.exe ../Nakedcash-binaries/${VERSION}
+	    ./bin/gbuild -i --commit signature=${COMMIT} ../nakedcash/contrib/gitian-descriptors/gitian-win-signer.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../nakedcash/contrib/gitian-descriptors/gitian-win-signer.yml
+	    mv build/out/nakedcash-*win64-setup.exe ../nakedcash-binaries/${VERSION}
+	    mv build/out/nakedcash-*win32-setup.exe ../nakedcash-binaries/${VERSION}
 	fi
 	# Sign Mac OSX
 	if [[ $osx = true ]]
@@ -391,9 +391,9 @@ then
 	    echo ""
 	    echo "Signing ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../Nakedcash/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../Nakedcash/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    mv build/out/Nakedcash-osx-signed.dmg ../Nakedcash-binaries/${VERSION}/Nakedcash-${VERSION}-osx.dmg
+	    ./bin/gbuild -i --commit signature=${COMMIT} ../nakedcash/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../nakedcash/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    mv build/out/nakedcash-osx-signed.dmg ../nakedcash-binaries/${VERSION}/nakedcash-${VERSION}-osx.dmg
 	fi
 	popd
 
