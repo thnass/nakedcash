@@ -297,9 +297,9 @@ static const unsigned sigma[16][16] = {
 #define Mx_(n)      Mx__(n)
 #define Mx__(n)     M ## n
 
-#define NAKD(r, i)   NAKD_(Z ## r ## i)
-#define NAKD_(n)     NAKD__(n)
-#define NAKD__(n)    CS ## n
+#define CSx(r, i)   CSx_(Z ## r ## i)
+#define CSx_(n)     CSx__(n)
+#define CSx__(n)    CS ## n
 
 #define CS0   SPH_C32(0x243F6A88)
 #define CS1   SPH_C32(0x85A308D3)
@@ -408,14 +408,14 @@ static const sph_u64 CB[16] = {
 #else
 
 #define ROUND_S(r)   do { \
-		GS(Mx(r, 0), Mx(r, 1), NAKD(r, 0), NAKD(r, 1), V0, V4, V8, VC); \
-		GS(Mx(r, 2), Mx(r, 3), NAKD(r, 2), NAKD(r, 3), V1, V5, V9, VD); \
-		GS(Mx(r, 4), Mx(r, 5), NAKD(r, 4), NAKD(r, 5), V2, V6, VA, VE); \
-		GS(Mx(r, 6), Mx(r, 7), NAKD(r, 6), NAKD(r, 7), V3, V7, VB, VF); \
-		GS(Mx(r, 8), Mx(r, 9), NAKD(r, 8), NAKD(r, 9), V0, V5, VA, VF); \
-		GS(Mx(r, A), Mx(r, B), NAKD(r, A), NAKD(r, B), V1, V6, VB, VC); \
-		GS(Mx(r, C), Mx(r, D), NAKD(r, C), NAKD(r, D), V2, V7, V8, VD); \
-		GS(Mx(r, E), Mx(r, F), NAKD(r, E), NAKD(r, F), V3, V4, V9, VE); \
+		GS(Mx(r, 0), Mx(r, 1), CSx(r, 0), CSx(r, 1), V0, V4, V8, VC); \
+		GS(Mx(r, 2), Mx(r, 3), CSx(r, 2), CSx(r, 3), V1, V5, V9, VD); \
+		GS(Mx(r, 4), Mx(r, 5), CSx(r, 4), CSx(r, 5), V2, V6, VA, VE); \
+		GS(Mx(r, 6), Mx(r, 7), CSx(r, 6), CSx(r, 7), V3, V7, VB, VF); \
+		GS(Mx(r, 8), Mx(r, 9), CSx(r, 8), CSx(r, 9), V0, V5, VA, VF); \
+		GS(Mx(r, A), Mx(r, B), CSx(r, A), CSx(r, B), V1, V6, VB, VC); \
+		GS(Mx(r, C), Mx(r, D), CSx(r, C), CSx(r, D), V2, V7, V8, VD); \
+		GS(Mx(r, E), Mx(r, F), CSx(r, E), CSx(r, F), V3, V4, V9, VE); \
 	} while (0)
 
 #endif
