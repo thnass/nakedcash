@@ -301,14 +301,20 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sph_bmw.h \
   crypto/sph_cubehash.h \
   crypto/sph_echo.h \
+  crypto/sph_fugue.h \
   crypto/sph_groestl.h \
+  crypto/sph_hamsi.h \
+  crypto/sph_haval.h \
   crypto/sph_jh.h \
   crypto/sph_keccak.h \
   crypto/sph_luffa.h \
+  crypto/sph_sha2.h \
+  crypto/sph_shabal.h \
   crypto/sph_shavite.h \
   crypto/sph_simd.h \
   crypto/sph_skein.h \
   crypto/sph_types.h \
+  crypto/sph_whirlpool.h \
   crypto/sha512.cpp \
   crypto/sha512.h
 
